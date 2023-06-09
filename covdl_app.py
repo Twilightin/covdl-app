@@ -22,7 +22,7 @@ st.set_page_config(
 def convert_df(df):
      # IMPORTANT: Cache the conversion to prevent computation on every rerun
      return df.to_csv().encode('utf-8')
-cov=pd.read_csv('covdl-app/WHOcov_cleaned.csv',index_col=0)
+cov=pd.read_csv('WHOcov_cleaned.csv',index_col=0)
 
 cov['Datetime']=pd.to_datetime(cov['Date'])
 cov['Date']=cov['Datetime'].apply(lambda x: x.strftime('%y-%m-%d'))
